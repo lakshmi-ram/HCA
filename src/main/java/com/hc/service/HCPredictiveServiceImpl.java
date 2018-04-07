@@ -34,7 +34,19 @@ public class HCPredictiveServiceImpl implements HCPredictiveService {
 		illnessCountResp1.setId("IN-KL");
 		illnessCountResp1.setState("Kerala");
 		illnessCountRespList.add(illnessCountResp1);
-				
+		
+		IllnessCountResp illnessCountResp2 = new IllnessCountResp();		
+		illnessCountResp2.setCount("1");
+		illnessCountResp2.setId("IN-KA");
+		illnessCountResp2.setState("Karnataka");
+		illnessCountRespList.add(illnessCountResp2);		
+
+		IllnessCountResp illnessCountResp3 = new IllnessCountResp();		
+		illnessCountResp3.setCount("1");
+		illnessCountResp3.setId("IN-AP");
+		illnessCountResp3.setState("Andhra Pradesh");
+		illnessCountRespList.add(illnessCountResp3);
+		
 		agrgtdIllnessResp.setIllnessCountRespList(illnessCountRespList);
 	
 		try {
@@ -73,8 +85,24 @@ public class HCPredictiveServiceImpl implements HCPredictiveService {
 
 	@Override
 	public AgrgtdIllnessResp getPredectiveData() {
-		// TODO Auto-generated method stub
-		return null;
+		AgrgtdIllnessResp agrgtdIllnessResp = new AgrgtdIllnessResp();
+		List<IllnessCountResp> illnessCountRespList = new ArrayList<IllnessCountResp>();
+		
+		IllnessCountResp illnessCountResp = new IllnessCountResp();		
+		illnessCountResp.setCount("2");
+		illnessCountResp.setId("IN-KA");
+		illnessCountResp.setState("Karnataka");
+		illnessCountRespList.add(illnessCountResp);
+		
+		IllnessCountResp illnessCountResp1 = new IllnessCountResp();
+		illnessCountResp1.setCount("5");
+		illnessCountResp1.setId("IN-AP");
+		illnessCountResp1.setState("Andhra Pradesh");
+		illnessCountRespList.add(illnessCountResp1);
+				
+		agrgtdIllnessResp.setIllnessCountRespList(illnessCountRespList);
+		
+		return agrgtdIllnessResp;
 	}
 
 }
