@@ -18,8 +18,7 @@ public class HCDashBrdController {
 	HCService hcLoginService;
 	
 	@RequestMapping(value = "/dashBoard", method = RequestMethod.GET)
-	public String dashBoard(Model model, HttpServletRequest req, HttpServletResponse res) {
-		
+	public String dashBoard(Model model, HttpServletRequest req, HttpServletResponse res) {		
 		return "app/index";
 	}
 

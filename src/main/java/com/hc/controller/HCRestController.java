@@ -11,12 +11,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hc.domain.HealthMetrics;
-import com.hc.dto.IllnessCountResp;
+import com.hc.dto.AgrgtdIllnessResp;
+import com.hc.dto.StateIllnessResp;
 import com.hc.repository.HealthMetricsRepo;
 import com.hc.service.HCService;
 
@@ -30,14 +32,25 @@ public class HCRestController {
 	HealthMetricsRepo healthMetricsRepo;
 	
 	@RequestMapping(value = "/aggregated-illness-count", method = RequestMethod.GET)
-	public ResponseEntity<IllnessCountResp> totalIllnessCount(HttpServletRequest req, HttpServletResponse res) {		
-		IllnessCountResp illnessCountResp = null;
+	public ResponseEntity<AgrgtdIllnessResp> totalIllnessCount(HttpServletRequest req, HttpServletResponse res) {		
+		AgrgtdIllnessResp agrgtdIllnessResp = null;
 		try {
-			illnessCountResp = hcService.getDashBoardData();			
+			agrgtdIllnessResp = hcService.getDashBoardData();			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return new ResponseEntity<IllnessCountResp>(illnessCountResp, HttpStatus.OK);
+		return new ResponseEntity<AgrgtdIllnessResp>(agrgtdIllnessResp, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/state-illness-count", method = RequestMethod.POST)
+	public ResponseEntity<StateIllnessResp> stateIllnessCount(HttpServletRequest req, HttpServletResponse res, @RequestBody String state) {		
+		StateIllnessResp stateIllnessResp = null;
+		try {
+			stateIllnessResp = hcService.getStateChartData(state);			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<StateIllnessResp>(stateIllnessResp, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/process-excel", method = RequestMethod.POST)
