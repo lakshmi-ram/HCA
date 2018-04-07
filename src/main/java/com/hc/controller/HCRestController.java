@@ -22,7 +22,6 @@ import com.hc.domain.HealthMetrics;
 import com.hc.dto.AgrgtdIllnessResp;
 import com.hc.dto.DiseaseSplitResp;
 import com.hc.dto.StateIllnessResp;
-import com.hc.repository.HealthMetricsRepo;
 import com.hc.service.HCService;
 
 @RestController
@@ -30,9 +29,6 @@ public class HCRestController {
 	
 	@Autowired
 	HCService hcService;
-
-	@Autowired
-	HealthMetricsRepo healthMetricsRepo;
 	
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/aggregated-illness-count", method = RequestMethod.GET)
@@ -101,7 +97,7 @@ public class HCRestController {
 				healthMetric.setState(row.getCell(6).toString());
 				healthMetric.setLatLong(row.getCell(7).toString());				
 				// persist data into database in here
-				healthMetricsRepo.save(healthMetric);
+				//healthMetricsRepo.save(healthMetric);
 			}								
 		} catch (Exception e) {
 			e.printStackTrace();

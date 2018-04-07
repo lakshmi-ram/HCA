@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hc.dto.AgrgtdIllnessResp;
 import com.hc.dto.DiseaseSplitResp;
-import com.hc.repository.HealthMetricsRepo;
 import com.hc.service.HCPredictiveService;
 
 @RestController
@@ -21,9 +20,6 @@ public class HCPredictiveController {
 	
 	@Autowired
 	HCPredictiveService hcService;
-
-	@Autowired
-	HealthMetricsRepo healthMetricsRepo;
 	
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/run1", method = RequestMethod.GET)

@@ -8,14 +8,12 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.hc.domain.HealthMetrics;
 import com.hc.dto.AgrgtdIllnessResp;
 import com.hc.dto.DiseaseSplitResp;
 import com.hc.dto.IllnessCountResp;
 import com.hc.dto.StateIllnessResp;
 import com.hc.dto.StateMetaData;
 import com.hc.helper.EmailHelper;
-import com.hc.repository.HealthMetricsRepo;
 
 @Component
 public class HCServiceImpl implements HCService {
@@ -23,12 +21,7 @@ public class HCServiceImpl implements HCService {
 	@Autowired
 	EmailHelper emailHelper;
 
-	@Autowired
-	HealthMetricsRepo healthMetricsRepo;
-
 	public AgrgtdIllnessResp getDashBoardData() {		
-		List<HealthMetrics> healthMetrics = (List<HealthMetrics>) healthMetricsRepo.findAll();
-		int size = healthMetrics.size();
 		AgrgtdIllnessResp agrgtdIllnessResp = new AgrgtdIllnessResp();
 		List<IllnessCountResp> illnessCountRespList = new ArrayList<IllnessCountResp>();
 		

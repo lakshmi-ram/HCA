@@ -1,12 +1,9 @@
 package com.hc.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-@Entity
+//@Entity
 public class HealthMetrics {
 
-    @Id
+	//  @Id
 	String aadhar;
 	String hospitalName;
 	String timeStamp;
