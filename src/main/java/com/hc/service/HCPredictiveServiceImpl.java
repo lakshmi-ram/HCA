@@ -22,19 +22,19 @@ public class HCPredictiveServiceImpl implements HCPredictiveService {
 	public AgrgtdIllnessResp getRun1Data() {
 		AgrgtdIllnessResp agrgtdIllnessResp = new AgrgtdIllnessResp();
 		List<IllnessCountResp> illnessCountRespList = new ArrayList<IllnessCountResp>();
-		IllnessCountResp illnessCountResp = new IllnessCountResp();
 		
+		IllnessCountResp illnessCountResp = new IllnessCountResp();		
 		illnessCountResp.setCount("5");
 		illnessCountResp.setId("IN-TN");
 		illnessCountResp.setState("Tamil Nadu");
 		illnessCountRespList.add(illnessCountResp);
 		
-		illnessCountResp.setCount("10");
-		illnessCountResp.setId("IN-KL");
-		illnessCountResp.setState("Kerala");
-		illnessCountRespList.add(illnessCountResp);
-		
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp1 = new IllnessCountResp();
+		illnessCountResp1.setCount("10");
+		illnessCountResp1.setId("IN-KL");
+		illnessCountResp1.setState("Kerala");
+		illnessCountRespList.add(illnessCountResp1);
+				
 		agrgtdIllnessResp.setIllnessCountRespList(illnessCountRespList);
 	
 		try {
@@ -49,19 +49,19 @@ public class HCPredictiveServiceImpl implements HCPredictiveService {
 	public AgrgtdIllnessResp getRun2Data() {
 		AgrgtdIllnessResp agrgtdIllnessResp = new AgrgtdIllnessResp();
 		List<IllnessCountResp> illnessCountRespList = new ArrayList<IllnessCountResp>();
-		IllnessCountResp illnessCountResp = new IllnessCountResp();
 		
+		IllnessCountResp illnessCountResp = new IllnessCountResp();		
 		illnessCountResp.setCount("10");
 		illnessCountResp.setId("IN-TN");
 		illnessCountResp.setState("Tamil Nadu");
 		illnessCountRespList.add(illnessCountResp);
 		
-		illnessCountResp.setCount("50");
-		illnessCountResp.setId("IN-KL");
-		illnessCountResp.setState("Kerala");
-		illnessCountRespList.add(illnessCountResp);
-		
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp1 = new IllnessCountResp();
+		illnessCountResp1.setCount("50");
+		illnessCountResp1.setId("IN-KL");
+		illnessCountResp1.setState("Kerala");
+		illnessCountRespList.add(illnessCountResp1);
+				
 		agrgtdIllnessResp.setIllnessCountRespList(illnessCountRespList);
 		try {
 			emailHelper.sendMail("harini.sridhar2885@gmail.com");
