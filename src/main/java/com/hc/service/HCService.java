@@ -10,6 +10,5 @@ import com.hc.dto.StateIllnessResp;
 public interface HCService {
 	public AgrgtdIllnessResp getDashBoardData();
 	public StateIllnessResp getStateChartData(String state);
-	public DiseaseSplitResp getDiseaseSplitCount(String disease);
-	public String triggerMail();
+	public DiseaseSplitResp getDiseaseSplitCount(String disease);	
 }

@@ -17,8 +17,14 @@ public class EmailHelper {
 	public void sendMail(String mailId) throws MessagingException {
 		MimeMessage message = sender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message);		
-		helper.setText("Your password is ");
-		helper.setSubject("Your password enclosed");		
+		helper.setText("Dear Member, \r\n" + 
+				"\r\n" + 
+				"There has been an incident of dengue spotted in your constituency at the Government Hospital. \r\n" + 
+				"\r\n" + 
+				"This is the first case spotted and we will keep you informed as the situation develops. \r\n" + 
+				"\r\n" + 
+				"For more details, visit the portal for an in depth look. \r\n");
+		helper.setSubject("Dengue Alert: Tamil Nadu");		
 		helper.setFrom("hpyAlert@gmail.com");
 		helper.setTo(mailId);		
 		

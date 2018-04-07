@@ -25,15 +25,6 @@ public class HCServiceImpl implements HCService {
 
 	@Autowired
 	HealthMetricsRepo healthMetricsRepo;
-	
-	public String triggerMail() {
-		try {
-			emailHelper.sendMail();
-			return "pwdresetsuccess";
-		} catch (Exception e) {
-			return "error";
-		}
-	}
 
 	public AgrgtdIllnessResp getDashBoardData() {		
 		List<HealthMetrics> healthMetrics = (List<HealthMetrics>) healthMetricsRepo.findAll();
