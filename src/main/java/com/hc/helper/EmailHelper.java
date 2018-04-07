@@ -14,13 +14,13 @@ public class EmailHelper {
     @Autowired
     private JavaMailSender sender;
     
-	public void sendMail() throws MessagingException {
+	public void sendMail(String mailId) throws MessagingException {
 		MimeMessage message = sender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message);		
 		helper.setText("Your password is ");
 		helper.setSubject("Your password enclosed");		
-		helper.setFrom("clipselect1@gmail.com");
-		helper.setTo(""); //TODO		
+		helper.setFrom("hpyAlert@gmail.com");
+		helper.setTo(mailId);		
 		
 		sender.send(message);
 	}
