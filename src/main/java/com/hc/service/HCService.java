@@ -1,5 +1,7 @@
 package com.hc.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.hc.dto.AgrgtdIllnessResp;
@@ -10,5 +12,5 @@ import com.hc.dto.StateIllnessResp;
 public interface HCService {
 	public AgrgtdIllnessResp getDashBoardData();
 	public StateIllnessResp getStateChartData(String state);
-	public DiseaseSplitResp getDiseaseSplitCount(String disease);	
+	public List<DiseaseSplitResp> getDiseaseSplitCount();	
 }

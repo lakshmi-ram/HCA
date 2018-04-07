@@ -9,6 +9,7 @@ export class TooltipComponent implements OnInit {
 @Input() formData:any;
 @Input() id:any;
 state:string;
+count:any;
   constructor() { }
 
   ngOnInit() {
@@ -16,6 +17,7 @@ state:string;
      for(let props of this.formData){
          if(props.id == this.id) {
              this.state = props.state;
+             this.count = props.count
         }
      }
   }

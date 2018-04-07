@@ -10,6 +10,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MapComponent } from './map/map.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { StateDetailsService } from './state-details.service';
+import { MapDetailsService } from './map.service';
+import { HttpModule } from '@angular/http'
 
 @NgModule({
   declarations: [
@@ -22,9 +24,11 @@ import { StateDetailsService } from './state-details.service';
   imports: [
     BrowserModule,
     ChartModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpModule
+    
   ],
-  providers: [StateDetailsService],
+  providers: [StateDetailsService,MapDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

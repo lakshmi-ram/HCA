@@ -1,6 +1,7 @@
 package com.hc.controller;
 
 import java.io.FileInputStream;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,6 +34,7 @@ public class HCRestController {
 	@Autowired
 	HealthMetricsRepo healthMetricsRepo;
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/aggregated-illness-count", method = RequestMethod.GET)
 	public ResponseEntity<AgrgtdIllnessResp> totalIllnessCount(HttpServletRequest req, HttpServletResponse res) {		
 		AgrgtdIllnessResp agrgtdIllnessResp = null;
@@ -43,6 +46,7 @@ public class HCRestController {
 		return new ResponseEntity<AgrgtdIllnessResp>(agrgtdIllnessResp, HttpStatus.OK);
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/state-illness-count", method = RequestMethod.POST)
 	public ResponseEntity<StateIllnessResp> stateIllnessCount(HttpServletRequest req, HttpServletResponse res, @RequestBody String state) {		
 		StateIllnessResp stateIllnessResp = null;
@@ -54,17 +58,19 @@ public class HCRestController {
 		return new ResponseEntity<StateIllnessResp>(stateIllnessResp, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/disease-split-count", method = RequestMethod.POST)
-	public ResponseEntity<DiseaseSplitResp> diseaseSplitCount(HttpServletRequest req, HttpServletResponse res, @RequestBody String disaease) {		
-		DiseaseSplitResp diseaseSplitResp = null;
+	@CrossOrigin(origins = "http://localhost:4200")
+	@RequestMapping(value = "/disease-split-count", method = RequestMethod.GET)
+	public ResponseEntity<List<DiseaseSplitResp>> diseaseSplitCount(HttpServletRequest req, HttpServletResponse res) {		
+		List<DiseaseSplitResp> diseaseSplitResp = null;
 		try {
-			diseaseSplitResp = hcService.getDiseaseSplitCount(disaease);			
+			diseaseSplitResp = hcService.getDiseaseSplitCount();			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return new ResponseEntity<DiseaseSplitResp>(diseaseSplitResp, HttpStatus.OK);
+		return new ResponseEntity<List<DiseaseSplitResp>>(diseaseSplitResp, HttpStatus.OK);
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/process-excel", method = RequestMethod.POST)
 	public String processExcel(String fileName){
 		try {

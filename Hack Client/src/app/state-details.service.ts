@@ -110,7 +110,7 @@ export class StateDetailsService {
     },
     {id: 'IN-WB',
       name: 'Andhra Pradesh'
-    },
+    }
 
   ]
   constructor() { }

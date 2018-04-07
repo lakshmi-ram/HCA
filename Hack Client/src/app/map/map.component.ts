@@ -8,6 +8,7 @@ import {
 } from '@angular/animations';
 
 import { StateDetailsService } from './../state-details.service';
+import { MapDetailsService } from './../map.service';
 
 @Component({
   selector: 'app-map',
@@ -29,8 +30,11 @@ import { StateDetailsService } from './../state-details.service';
   ]
 })
 export class MapComponent implements OnInit {
+  stateValue: any;
   diseaseData:any;
   id: any;
+  stateData:any;
+  errorMsg;
   showToolTip:boolean = false;
   data:any = [];
   test:true;
@@ -39,85 +43,54 @@ export class MapComponent implements OnInit {
   inactiveState= [];
   allPaths= {}
   @ViewChild('openBtn') openBtn : ElementRef;
-  constructor(private elementRef:ElementRef, private _states: StateDetailsService) {
+  constructor(private elementRef:ElementRef, private _states: StateDetailsService,private _statesService:MapDetailsService) {
 
-    this.dataPie = {
-      labels: ['A','B','C'],
-      datasets: [
-          {
-              data: [300, 50, 100],
-              backgroundColor: [
-                  "#FF6384",
-                  "#36A2EB",
-                  "#FFCE56"
-              ],
-              hoverBackgroundColor: [
-                  "#FF6384",
-                  "#36A2EB",
-                  "#FFCE56"
-              ]
-          }]
-      };
+    
   }
 
   ngOnInit() {
-    this.data = [
-      {
-        'state':"Jammu and Kashmir",
-        "id":"IN-JK"
-      },
-      {
-        'state':"West Bengal",
-        "id":"IN-WB"
-      },
-      {
-        'state':"Himachal Pradesh",
-        "id":"IN-HP"
-      },
-      {
-        'state':"Arunachal Pradesh",
-        "id":"IN-AP"
-      }
-    ];
-    this.diseaseData= [
-      {
-        "diseaseName":"Dengue",
-        "percentage":"15%",
-        "states":[
-          {
-            'state':"Arunachal Pradesh",
-            "id":"IN-AP"
-          },
-          {
-            'state':"Himachal Pradesh",
-            "id":"IN-HP"
-          },
-          {
-            'state':"West Bengal",
-            "id":"IN-WB"
-          }
-        ]
-      },
-      {
-        "diseaseName":"Chicken Pox",
-        "percentage":"45%",
-        "states":[
-          {
-            'state':"Jammu & Kashmir",
-            "id":"IN-JK"
-          },
-          {
-            'state':"Himachal Pradesh",
-            "id":"IN-HP"
-          },
-          {
-            'state':"West Bengal",
-            "id":"IN-WB"
-          }
-        ]
-      }
+  this.getAllStates();
+  this.getDiseaseData();
+  
+    // this.diseaseData= [
+    //   {
+    //     "diseaseName":"Dengue",
+    //     "percentage":"15%",
+    //     "states":[
+    //       {
+    //         'state':"Arunachal Pradesh",
+    //         "id":"IN-AP"
+    //       },
+    //       {
+    //         'state':"Himachal Pradesh",
+    //         "id":"IN-HP"
+    //       },
+    //       {
+    //         'state':"West Bengal",
+    //         "id":"IN-WB"
+    //       }
+    //     ]
+    //   },
+    //   {
+    //     "diseaseName":"Chicken Pox",
+    //     "percentage":"45%",
+    //     "states":[
+    //       {
+    //         'state':"Jammu & Kashmir",
+    //         "id":"IN-JK"
+    //       },
+    //       {
+    //         'state':"Himachal Pradesh",
+    //         "id":"IN-HP"
+    //       },
+    //       {
+    //         'state':"West Bengal",
+    //         "id":"IN-WB"
+    //       }
+    //     ]
+    //   }
 
-    ]
+    // ]
   }
 
   ngAfterViewInit() {
@@ -146,7 +119,54 @@ export class MapComponent implements OnInit {
     this.showToolTip = false;
     event.target.classList.remove('active');
   }
+  getAllStates(){
+  	 this._statesService.getAllState()
+           .subscribe(data => {
+               this.stateData = data.illnessCountRespList;
+               console.log(this.stateData)
+               }
+           ),
+           error =>this.errorMsg = <any> error;
+  }
+  testPie(id) {
+    this.getPieChartData(id)
+  }
+  getPieChartData(id){
+    this._statesService.getPieChartData(id)
+          .subscribe(data => {
+            
+               this.dataPie = {
+                labels: ['Malaria','Dengue','Chicken Pox'],
+                datasets: [
+                    {
+                        data: [300,200,400],
+                        backgroundColor: [
+                            "#FF6384",
+                            "#36A2EB",
+                            "#FFCE56"
+                        ],
+                        hoverBackgroundColor: [
+                            "#FF6384",
+                            "#36A2EB",
+                            "#FFCE56"
+                        ]
+                    }]
+                };
+              
+              }
+          ),
+          error =>this.errorMsg = <any> error;
+ }
+ getDiseaseData() {
+  this._statesService.getDiseaseData()
+  .subscribe(data => {
+      this.diseaseData = data;
+      console.log(this.diseaseData)
+      }
+  ),
+  error =>this.errorMsg = <any> error;
 
+ }
   toggleState(event) {
     console.log(3, event);
     this.openBtn.nativeElement.click();

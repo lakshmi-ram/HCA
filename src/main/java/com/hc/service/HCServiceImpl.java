@@ -38,45 +38,53 @@ public class HCServiceImpl implements HCService {
 		illnessCountResp.setState("Uttar Pradesh");
 		illnessCountRespList.add(illnessCountResp);
 		
-		illnessCountResp.setCount("32000");
-		illnessCountResp.setId("IN-MH");
-		illnessCountResp.setState("Maharashtra");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp1 = new IllnessCountResp();
+		illnessCountResp1.setCount("32000");
+		illnessCountResp1.setId("IN-MH");
+		illnessCountResp1.setState("Maharashtra");
+		illnessCountRespList.add(illnessCountResp1);
 		
-		illnessCountResp.setCount("31000");
-		illnessCountResp.setId("IN-BR");
-		illnessCountResp.setState("Bihar");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp2 = new IllnessCountResp();
+		illnessCountResp2.setCount("31000");
+		illnessCountResp2.setId("IN-BR");
+		illnessCountResp2.setState("Bihar");
+		illnessCountRespList.add(illnessCountResp2);
 		
-		illnessCountResp.setCount("32000");
-		illnessCountResp.setId("IN-WB");
-		illnessCountResp.setState("West Bengal");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp3 = new IllnessCountResp();
+		illnessCountResp3.setCount("32000");
+		illnessCountResp3.setId("IN-WB");
+		illnessCountResp3.setState("West Bengal");
+		illnessCountRespList.add(illnessCountResp3);
 		
-		illnessCountResp.setCount("30000");
-		illnessCountResp.setId("IN-MP");
-		illnessCountResp.setState("Madhya Pradesh");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp4 = new IllnessCountResp();
+		illnessCountResp4.setCount("30000");
+		illnessCountResp4.setId("IN-MP");
+		illnessCountResp4.setState("Madhya Pradesh");
+		illnessCountRespList.add(illnessCountResp4);
 		
-		illnessCountResp.setCount("33000");
-		illnessCountResp.setId("IN-TN");
-		illnessCountResp.setState("Tamil Nadu");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp5 = new IllnessCountResp();
+		illnessCountResp5.setCount("33000");
+		illnessCountResp5.setId("IN-TN");
+		illnessCountResp5.setState("Tamil Nadu");
+		illnessCountRespList.add(illnessCountResp5);
 		
-		illnessCountResp.setCount("33000");
-		illnessCountResp.setId("IN-RJ");
-		illnessCountResp.setState("Rajasthan");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp6 = new IllnessCountResp();
+		illnessCountResp6.setCount("33000");
+		illnessCountResp6.setId("IN-RJ");
+		illnessCountResp6.setState("Rajasthan");
+		illnessCountRespList.add(illnessCountResp6);
 		
-		illnessCountResp.setCount("29000");
-		illnessCountResp.setId("IN-KA");
-		illnessCountResp.setState("Karnataka");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp7 = new IllnessCountResp();
+		illnessCountResp7.setCount("29000");
+		illnessCountResp7.setId("IN-KA");
+		illnessCountResp7.setState("Karnataka");
+		illnessCountRespList.add(illnessCountResp7);
 		
-		illnessCountResp.setCount("34000");
-		illnessCountResp.setId("IN-GJ");
-		illnessCountResp.setState("Gujarat");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp8 = new IllnessCountResp();
+		illnessCountResp8.setCount("34000");
+		illnessCountResp8.setId("IN-GJ");
+		illnessCountResp8.setState("Gujarat");
+		illnessCountRespList.add(illnessCountResp8);
 		
 		illnessCountResp.setCount("32000");
 		illnessCountResp.setId("IN-AP");
@@ -258,72 +266,73 @@ public class HCServiceImpl implements HCService {
 	}
 
 	@Override
-	public DiseaseSplitResp getDiseaseSplitCount(String diseaseName) {
-		DiseaseSplitResp diseaseSplitResp = new DiseaseSplitResp();
-		diseaseSplitResp.setDiseaseName(diseaseName);
-		List<StateMetaData> states= new ArrayList<StateMetaData>();
-		if(diseaseName.equalsIgnoreCase("Dengue")){
+	public List<DiseaseSplitResp> getDiseaseSplitCount() {		
+		
+		List<DiseaseSplitResp> diseaseSplitRespList= new ArrayList<>();
+			DiseaseSplitResp diseaseSplitResp = new DiseaseSplitResp();
+			List<StateMetaData> states= new ArrayList<StateMetaData>();
+			diseaseSplitResp.setDiseaseName("Dengue");
 			diseaseSplitResp.setPercent("55");
 			StateMetaData stateMetaData = new StateMetaData();
 			stateMetaData.setId("IN-KL");
 			stateMetaData.setState("Kerala");
 			states.add(stateMetaData);	
 			
-			stateMetaData.setId("IN-JK");
-			stateMetaData.setState("Jammu and Kashmir");
-			states.add(stateMetaData);
+			StateMetaData stateMetaData1 = new StateMetaData();
+			stateMetaData1.setId("IN-JK");
+			stateMetaData1.setState("Jammu and Kashmir");
+			states.add(stateMetaData1);
 			
-			stateMetaData.setId("IN-TN");
-			stateMetaData.setState("Tamil Nadu");
-			states.add(stateMetaData);
+			StateMetaData stateMetaData2 = new StateMetaData();
+			stateMetaData2.setId("IN-TN");
+			stateMetaData2.setState("Tamil Nadu");
+			states.add(stateMetaData2);
 			diseaseSplitResp.setStates(states);
-		}else if(diseaseName.equalsIgnoreCase("Malaria")){
-			diseaseSplitResp.setPercent("20");
-			StateMetaData stateMetaData = new StateMetaData();
-			stateMetaData.setId("IN-KL");
-			stateMetaData.setState("Kerala");
-			states.add(stateMetaData);	
+			diseaseSplitRespList.add(diseaseSplitResp);
+			//
+			DiseaseSplitResp diseaseSplitResp2 = new DiseaseSplitResp();
+			List<StateMetaData> states2= new ArrayList<StateMetaData>();
+			diseaseSplitResp2.setDiseaseName("Malaria");
+			diseaseSplitResp2.setPercent("20");
+			StateMetaData stateMetaData3 = new StateMetaData();
+			stateMetaData3.setId("IN-KL");
+			stateMetaData3.setState("Kerala");
+			states2.add(stateMetaData3);	
 			
-			stateMetaData.setId("IN-JK");
-			stateMetaData.setState("Jammu and Kashmir");
-			states.add(stateMetaData);
+			StateMetaData stateMetaData4 = new StateMetaData();
+			stateMetaData4.setId("IN-JK");
+			stateMetaData4.setState("Jammu and Kashmir");
+			states2.add(stateMetaData4);
 			
-			stateMetaData.setId("IN-TN");
-			stateMetaData.setState("Tamil Nadu");
-			states.add(stateMetaData);
-			diseaseSplitResp.setStates(states);
-		}else if(diseaseName.equalsIgnoreCase("Chicken Pox")){
-			diseaseSplitResp.setPercent("10");
-			StateMetaData stateMetaData = new StateMetaData();
-			stateMetaData.setId("IN-MH");
-			stateMetaData.setState("Maharashtra");
-			states.add(stateMetaData);	
+			StateMetaData stateMetaData5 = new StateMetaData();
+			stateMetaData5.setId("IN-TN");
+			stateMetaData5.setState("Tamil Nadu");
+			states2.add(stateMetaData5);
+			diseaseSplitResp2.setStates(states2);
+			diseaseSplitRespList.add(diseaseSplitResp2);
 			
-			stateMetaData.setId("IN-WB");
-			stateMetaData.setState("West Bengal");
-			states.add(stateMetaData);
+			DiseaseSplitResp diseaseSplitResp3 = new DiseaseSplitResp();
+			List<StateMetaData> states3= new ArrayList<StateMetaData>();
+			diseaseSplitResp3.setDiseaseName("Chicken Pox");
+			diseaseSplitResp3.setPercent("10");
+			StateMetaData stateMetaData6 = new StateMetaData();
+			stateMetaData6.setId("IN-MH");
+			stateMetaData6.setState("Maharashtra");
+			states3.add(stateMetaData6);	
 			
-			stateMetaData.setId("IN-TN");
-			stateMetaData.setState("Tamil Nadu");
-			states.add(stateMetaData);
-			diseaseSplitResp.setStates(states);
-		}else {
-			diseaseSplitResp.setPercent("15");
-			StateMetaData stateMetaData = new StateMetaData();
-			stateMetaData.setId("IN-KL");
-			stateMetaData.setState("Kerala");
-			states.add(stateMetaData);	
+			StateMetaData stateMetaData7 = new StateMetaData();
+			stateMetaData7.setId("IN-WB");
+			stateMetaData7.setState("West Bengal");
+			states3.add(stateMetaData7);
 			
-			stateMetaData.setId("IN-JK");
-			stateMetaData.setState("Jammu and Kashmir");
-			states.add(stateMetaData);
+			StateMetaData stateMetaData8 = new StateMetaData();
+			stateMetaData8.setId("IN-TN");
+			stateMetaData8.setState("Tamil Nadu");
+			states3.add(stateMetaData8);
+			diseaseSplitResp3.setStates(states3);
+			diseaseSplitRespList.add(diseaseSplitResp3);
 			
-			stateMetaData.setId("IN-TN");
-			stateMetaData.setState("Tamil Nadu");
-			states.add(stateMetaData);
-			diseaseSplitResp.setStates(states);
-		}		
-		return diseaseSplitResp;
+		return diseaseSplitRespList;
 	}
 
 }

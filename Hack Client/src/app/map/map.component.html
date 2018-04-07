@@ -836,7 +836,7 @@
 
   </div>
   	<div class="pull-right" style="margin-top: -35%;margin-right: 15em;">
-		<tooltip *ngIf='showToolTip' [formData]="data" [id]="id"></tooltip>
+		<tooltip *ngIf='showToolTip' [formData]="stateData" [id]="id"></tooltip>
 	</div>
 	<div class='pull-right' style="
 								width: 20em;
@@ -848,12 +848,12 @@
 			<div *ngFor="let data of diseaseData; let i = index;" class="">
 				<button style="margin-bottom: 1em;padding:0;" class='btn btn-primary' (click)="test1(i,$event)">{{data.diseaseName}}</button>
 				<span class='' style="font-size: 2em;
-				padding: 1em;">{{data.percentage}}</span>
+				padding: 1em;">{{data.percent}}%</span>
 				<br/>
 		</div>
 	</div>
 	<div class="col-sm-2 col-sm-offset-2">
-			<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="display: none !important;" #openBtn>Open Modal</button>
+			<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="display: none !important;" #openBtn (click)='testPie(id)'>Open Modal</button>
 
 			<!-- Modal -->
 			<div class="modal fade" id="myModal" role="dialog">
@@ -863,14 +863,11 @@
 				<div class="modal-content">
 				  <div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Modal Header</h4>
+					<h4 class="modal-title">Total Data</h4>
 				  </div>
 				  <div class="modal-body">
-					<p>{{id}}</p>
+					<p>State : <strong><em>{{id}}</em></strong></p>
 					<p-chart type="pie" [data]="dataPie" width="400vw" height="400vh" ></p-chart>
-				  </div>
-				  <div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				  </div>
 				</div>
 
