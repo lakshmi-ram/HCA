@@ -31,8 +31,8 @@ public class HCServiceImpl implements HCService {
 		int size = healthMetrics.size();
 		AgrgtdIllnessResp agrgtdIllnessResp = new AgrgtdIllnessResp();
 		List<IllnessCountResp> illnessCountRespList = new ArrayList<IllnessCountResp>();
-		IllnessCountResp illnessCountResp = new IllnessCountResp();
 		
+		IllnessCountResp illnessCountResp = new IllnessCountResp();		
 		illnessCountResp.setCount("33000");
 		illnessCountResp.setId("IN-UP");
 		illnessCountResp.setState("Uttar Pradesh");
@@ -86,155 +86,185 @@ public class HCServiceImpl implements HCService {
 		illnessCountResp8.setState("Gujarat");
 		illnessCountRespList.add(illnessCountResp8);
 		
-		illnessCountResp.setCount("32000");
-		illnessCountResp.setId("IN-AP");
-		illnessCountResp.setState("Andhra Pradesh");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp9 = new IllnessCountResp();
+		illnessCountResp9.setCount("32000");
+		illnessCountResp9.setId("IN-AP");
+		illnessCountResp9.setState("Andhra Pradesh");
+		illnessCountRespList.add(illnessCountResp9);
 		
-		illnessCountResp.setCount("33000");
-		illnessCountResp.setId("IN-OR");
-		illnessCountResp.setState("Orissa");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp0 = new IllnessCountResp();
+		illnessCountResp0.setCount("33000");
+		illnessCountResp0.setId("IN-OR");
+		illnessCountResp0.setState("Orissa");
+		illnessCountRespList.add(illnessCountResp0);
 		
-		illnessCountResp.setCount("33000");
-		illnessCountResp.setId("IN-OR");
-		illnessCountResp.setState("Orissa");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp10 = new IllnessCountResp();
+		illnessCountResp10.setCount("33000");
+		illnessCountResp10.setId("IN-OR");
+		illnessCountResp10.setState("Orissa");
+		illnessCountRespList.add(illnessCountResp10);
 		
-		illnessCountResp.setCount("33000");
-		illnessCountResp.setId("IN-TG");
-		illnessCountResp.setState("Telangana");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp11 = new IllnessCountResp();
+		illnessCountResp11.setCount("33000");
+		illnessCountResp11.setId("IN-TG");
+		illnessCountResp11.setState("Telangana");
+		illnessCountRespList.add(illnessCountResp11);
 		
-		illnessCountResp.setCount("31000");
-		illnessCountResp.setId("IN-KL");
-		illnessCountResp.setState("Kerala");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp12 = new IllnessCountResp();
+		illnessCountResp12.setCount("31000");
+		illnessCountResp12.setId("IN-KL");
+		illnessCountResp12.setState("Kerala");
+		illnessCountRespList.add(illnessCountResp12);
 		
-		illnessCountResp.setCount("29000");
-		illnessCountResp.setId("IN-JH");
-		illnessCountResp.setState("Jharkhand");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp13 = new IllnessCountResp();
+		illnessCountResp13.setCount("29000");
+		illnessCountResp13.setId("IN-JH");
+		illnessCountResp13.setState("Jharkhand");
+		illnessCountRespList.add(illnessCountResp13);
 		
-		illnessCountResp.setCount("33000");
-		illnessCountResp.setId("IN-OR");
-		illnessCountResp.setState("Jharkhand");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp14 = new IllnessCountResp();
+		illnessCountResp14.setCount("33000");
+		illnessCountResp14.setId("IN-OR");
+		illnessCountResp14.setState("Jharkhand");
+		illnessCountRespList.add(illnessCountResp14);
 		
-		illnessCountResp.setCount("28000");
-		illnessCountResp.setId("IN-AS");
-		illnessCountResp.setState("Assam");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp15 = new IllnessCountResp();
+		illnessCountResp15.setCount("28000");
+		illnessCountResp15.setId("IN-AS");
+		illnessCountResp15.setState("Assam");
+		illnessCountRespList.add(illnessCountResp15);
 		
-		illnessCountResp.setCount("30000");
-		illnessCountResp.setId("IN-PB");
-		illnessCountResp.setState("Punjab");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp16 = new IllnessCountResp();
+		illnessCountResp16.setCount("30000");
+		illnessCountResp16.setId("IN-PB");
+		illnessCountResp16.setState("Punjab");
+		illnessCountRespList.add(illnessCountResp16);
 		
-		illnessCountResp.setCount("33000");
-		illnessCountResp.setId("IN-CT");
-		illnessCountResp.setState("Chhattisgarh");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp17 = new IllnessCountResp();
+		illnessCountResp17.setCount("33000");
+		illnessCountResp17.setId("IN-CT");
+		illnessCountResp17.setState("Chhattisgarh");
+		illnessCountRespList.add(illnessCountResp17);
 		
-		illnessCountResp.setCount("30000");
-		illnessCountResp.setId("IN-HR");
-		illnessCountResp.setState("Haryana");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp18 = new IllnessCountResp();
+		illnessCountResp18.setCount("30000");
+		illnessCountResp18.setId("IN-HR");
+		illnessCountResp18.setState("Haryana");
+		illnessCountRespList.add(illnessCountResp18);
 		
-		illnessCountResp.setCount("20000");
-		illnessCountResp.setId("IN-JK");
-		illnessCountResp.setState("Jammu and Kashmir");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp19 = new IllnessCountResp();
+		illnessCountResp19.setCount("20000");
+		illnessCountResp19.setId("IN-JK");
+		illnessCountResp19.setState("Jammu and Kashmir");
+		illnessCountRespList.add(illnessCountResp19);
 		
-		illnessCountResp.setCount("28000");
-		illnessCountResp.setId("IN-UT");
-		illnessCountResp.setState("Uttarakhand");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp20 = new IllnessCountResp();
+		illnessCountResp20.setCount("28000");
+		illnessCountResp20.setId("IN-UT");
+		illnessCountResp20.setState("Uttarakhand");
+		illnessCountRespList.add(illnessCountResp20);
 		
-		illnessCountResp.setCount("17000");
-		illnessCountResp.setId("IN-HP");
-		illnessCountResp.setState("Himachal Pradesh");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp21 = new IllnessCountResp();
+		illnessCountResp21.setCount("17000");
+		illnessCountResp21.setId("IN-HP");
+		illnessCountResp21.setState("Himachal Pradesh");
+		illnessCountRespList.add(illnessCountResp21);
 		
-		illnessCountResp.setCount("31000");
-		illnessCountResp.setId("IN-TR");
-		illnessCountResp.setState("Tripura");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp22 = new IllnessCountResp();
+		illnessCountResp22.setCount("31000");
+		illnessCountResp22.setId("IN-TR");
+		illnessCountResp22.setState("Tripura");
+		illnessCountRespList.add(illnessCountResp22);
 		
-		illnessCountResp.setCount("31000");
-		illnessCountResp.setId("IN-TR");
-		illnessCountResp.setState("Tripura");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp23 = new IllnessCountResp();
+		illnessCountResp23.setCount("31000");
+		illnessCountResp23.setId("IN-TR");
+		illnessCountResp23.setState("Tripura");
+		illnessCountRespList.add(illnessCountResp23);
 		
-		illnessCountResp.setCount("21000");
-		illnessCountResp.setId("IN-ML");
-		illnessCountResp.setState("Meghalaya");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp24 = new IllnessCountResp();
+		illnessCountResp24.setCount("21000");
+		illnessCountResp24.setId("IN-ML");
+		illnessCountResp24.setState("Meghalaya");
+		illnessCountRespList.add(illnessCountResp24);
 		
-		illnessCountResp.setCount("22000");
-		illnessCountResp.setId("IN-MN");
-		illnessCountResp.setState("Manipur");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp25 = new IllnessCountResp();
+		illnessCountResp25.setCount("22000");
+		illnessCountResp25.setId("IN-MN");
+		illnessCountResp25.setState("Manipur");
+		illnessCountRespList.add(illnessCountResp25);
 		
-		illnessCountResp.setCount("22000");
-		illnessCountResp.setId("IN-NL");
-		illnessCountResp.setState("Nagaland");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp26 = new IllnessCountResp();
+		illnessCountResp26.setCount("22000");
+		illnessCountResp26.setId("IN-NL");
+		illnessCountResp26.setState("Nagaland");
+		illnessCountRespList.add(illnessCountResp26);
 		
-		illnessCountResp.setCount("32000");
-		illnessCountResp.setId("IN-GA");
-		illnessCountResp.setState("Goa");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp27 = new IllnessCountResp();
+		illnessCountResp27.setCount("32000");
+		illnessCountResp27.setId("IN-GA");
+		illnessCountResp27.setState("Goa");
+		illnessCountRespList.add(illnessCountResp27);
 		
-		illnessCountResp.setCount("33000");
-		illnessCountResp.setId("IN-AR");
-		illnessCountResp.setState("Arunachal Pradesh");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp28 = new IllnessCountResp();
+		illnessCountResp28.setCount("33000");
+		illnessCountResp28.setId("IN-AR");
+		illnessCountResp28.setState("Arunachal Pradesh");
+		illnessCountRespList.add(illnessCountResp28);
 		
-		illnessCountResp.setCount("23000");
-		illnessCountResp.setId("IN-MZ");
-		illnessCountResp.setState("Mizoram");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp29 = new IllnessCountResp();
+		illnessCountResp29.setCount("23000");
+		illnessCountResp29.setId("IN-MZ");
+		illnessCountResp29.setState("Mizoram");
+		illnessCountRespList.add(illnessCountResp29);
 		
-		illnessCountResp.setCount("24000");
-		illnessCountResp.setId("IN-SK");
-		illnessCountResp.setState("Sikkim");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp30 = new IllnessCountResp();
+		illnessCountResp30.setCount("24000");
+		illnessCountResp30.setId("IN-SK");
+		illnessCountResp30.setState("Sikkim");
+		illnessCountRespList.add(illnessCountResp30);
 		
-		illnessCountResp.setCount("31000");
-		illnessCountResp.setId("IN-DL");
-		illnessCountResp.setState("Delhi");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp31 = new IllnessCountResp();
+		illnessCountResp31.setCount("31000");
+		illnessCountResp31.setId("IN-DL");
+		illnessCountResp31.setState("Delhi");
+		illnessCountRespList.add(illnessCountResp31);
 		
-		illnessCountResp.setCount("33000");
-		illnessCountResp.setId("IN-PY");
-		illnessCountResp.setState("Puducherry");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp32 = new IllnessCountResp();
+		illnessCountResp32.setCount("33000");
+		illnessCountResp32.setId("IN-PY");
+		illnessCountResp32.setState("Puducherry");
+		illnessCountRespList.add(illnessCountResp32);
 		
-		illnessCountResp.setCount("30000");
-		illnessCountResp.setId("IN-CH");
-		illnessCountResp.setState("Chandigarh");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp33 = new IllnessCountResp();
+		illnessCountResp33.setCount("30000");
+		illnessCountResp33.setId("IN-CH");
+		illnessCountResp33.setState("Chandigarh");
+		illnessCountRespList.add(illnessCountResp33);
 		
-		illnessCountResp.setCount("30000");
-		illnessCountResp.setId("IN-AN");
-		illnessCountResp.setState("Andaman and Nicobar Islands");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp34 = new IllnessCountResp();
+		illnessCountResp34.setCount("30000");
+		illnessCountResp34.setId("IN-AN");
+		illnessCountResp34.setState("Andaman and Nicobar Islands");
+		illnessCountRespList.add(illnessCountResp34);
 		
-		illnessCountResp.setCount("30000");
-		illnessCountResp.setId("IN-DN");
-		illnessCountResp.setState("Dadra and Nagar Haveli");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp35 = new IllnessCountResp();
+		illnessCountResp35.setCount("30000");
+		illnessCountResp35.setId("IN-DN");
+		illnessCountResp35.setState("Dadra and Nagar Haveli");
+		illnessCountRespList.add(illnessCountResp35);
 		
-		illnessCountResp.setCount("29000");
-		illnessCountResp.setId("IN-DD");
-		illnessCountResp.setState("Daman and Diu");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp36 = new IllnessCountResp();
+		illnessCountResp36.setCount("29000");
+		illnessCountResp36.setId("IN-DD");
+		illnessCountResp36.setState("Daman and Diu");
+		illnessCountRespList.add(illnessCountResp36);
 		
-		illnessCountResp.setCount("31000");
-		illnessCountResp.setId("IN-LD");
-		illnessCountResp.setState("Lakshadweep");
-		illnessCountRespList.add(illnessCountResp);
+		IllnessCountResp illnessCountResp37 = new IllnessCountResp();
+		illnessCountResp37.setCount("31000");
+		illnessCountResp37.setId("IN-LD");
+		illnessCountResp37.setState("Lakshadweep");
+		illnessCountRespList.add(illnessCountResp37);
 		agrgtdIllnessResp.setIllnessCountRespList(illnessCountRespList);
 		return agrgtdIllnessResp;
 	}
@@ -295,18 +325,18 @@ public class HCServiceImpl implements HCService {
 			diseaseSplitResp2.setDiseaseName("Malaria");
 			diseaseSplitResp2.setPercent("20");
 			StateMetaData stateMetaData3 = new StateMetaData();
-			stateMetaData3.setId("IN-KL");
-			stateMetaData3.setState("Kerala");
+			stateMetaData3.setId("IN-BR");
+			stateMetaData3.setState("Bihar");
 			states2.add(stateMetaData3);	
 			
 			StateMetaData stateMetaData4 = new StateMetaData();
-			stateMetaData4.setId("IN-JK");
-			stateMetaData4.setState("Jammu and Kashmir");
+			stateMetaData4.setId("IN-KA");
+			stateMetaData4.setState("Karnataka");
 			states2.add(stateMetaData4);
 			
 			StateMetaData stateMetaData5 = new StateMetaData();
-			stateMetaData5.setId("IN-TN");
-			stateMetaData5.setState("Tamil Nadu");
+			stateMetaData5.setId("IN-TG");
+			stateMetaData5.setState("Telangana");
 			states2.add(stateMetaData5);
 			diseaseSplitResp2.setStates(states2);
 			diseaseSplitRespList.add(diseaseSplitResp2);
