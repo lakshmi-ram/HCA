@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hc.domain.HealthMetrics;
 import com.hc.dto.AgrgtdIllnessResp;
+import com.hc.dto.DiseaseSplitResp;
 import com.hc.dto.StateIllnessResp;
 import com.hc.repository.HealthMetricsRepo;
 import com.hc.service.HCService;
@@ -51,6 +52,17 @@ public class HCRestController {
 			e.printStackTrace();
 		}
 		return new ResponseEntity<StateIllnessResp>(stateIllnessResp, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/disease-split-count", method = RequestMethod.POST)
+	public ResponseEntity<DiseaseSplitResp> diseaseSplitCount(HttpServletRequest req, HttpServletResponse res, @RequestBody String disaease) {		
+		DiseaseSplitResp diseaseSplitResp = null;
+		try {
+			diseaseSplitResp = hcService.getDiseaseSplitCount(disaease);			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<DiseaseSplitResp>(diseaseSplitResp, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/process-excel", method = RequestMethod.POST)

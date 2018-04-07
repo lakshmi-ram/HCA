@@ -10,8 +10,10 @@ import org.springframework.stereotype.Component;
 
 import com.hc.domain.HealthMetrics;
 import com.hc.dto.AgrgtdIllnessResp;
+import com.hc.dto.DiseaseSplitResp;
 import com.hc.dto.IllnessCountResp;
 import com.hc.dto.StateIllnessResp;
+import com.hc.dto.StateMetaData;
 import com.hc.helper.EmailHelper;
 import com.hc.repository.HealthMetricsRepo;
 
@@ -262,6 +264,75 @@ public class HCServiceImpl implements HCService {
 		}
 		stateIllnessResp.setDiseaseMap(diseaseMap);
 		return stateIllnessResp;
+	}
+
+	@Override
+	public DiseaseSplitResp getDiseaseSplitCount(String diseaseName) {
+		DiseaseSplitResp diseaseSplitResp = new DiseaseSplitResp();
+		diseaseSplitResp.setDiseaseName(diseaseName);
+		List<StateMetaData> states= new ArrayList<StateMetaData>();
+		if(diseaseName.equalsIgnoreCase("Dengue")){
+			diseaseSplitResp.setPercent("55");
+			StateMetaData stateMetaData = new StateMetaData();
+			stateMetaData.setId("IN-KL");
+			stateMetaData.setState("Kerala");
+			states.add(stateMetaData);	
+			
+			stateMetaData.setId("IN-JK");
+			stateMetaData.setState("Jammu and Kashmir");
+			states.add(stateMetaData);
+			
+			stateMetaData.setId("IN-TN");
+			stateMetaData.setState("Tamil Nadu");
+			states.add(stateMetaData);
+			diseaseSplitResp.setStates(states);
+		}else if(diseaseName.equalsIgnoreCase("Malaria")){
+			diseaseSplitResp.setPercent("20");
+			StateMetaData stateMetaData = new StateMetaData();
+			stateMetaData.setId("IN-KL");
+			stateMetaData.setState("Kerala");
+			states.add(stateMetaData);	
+			
+			stateMetaData.setId("IN-JK");
+			stateMetaData.setState("Jammu and Kashmir");
+			states.add(stateMetaData);
+			
+			stateMetaData.setId("IN-TN");
+			stateMetaData.setState("Tamil Nadu");
+			states.add(stateMetaData);
+			diseaseSplitResp.setStates(states);
+		}else if(diseaseName.equalsIgnoreCase("Chicken Pox")){
+			diseaseSplitResp.setPercent("10");
+			StateMetaData stateMetaData = new StateMetaData();
+			stateMetaData.setId("IN-MH");
+			stateMetaData.setState("Maharashtra");
+			states.add(stateMetaData);	
+			
+			stateMetaData.setId("IN-WB");
+			stateMetaData.setState("West Bengal");
+			states.add(stateMetaData);
+			
+			stateMetaData.setId("IN-TN");
+			stateMetaData.setState("Tamil Nadu");
+			states.add(stateMetaData);
+			diseaseSplitResp.setStates(states);
+		}else {
+			diseaseSplitResp.setPercent("15");
+			StateMetaData stateMetaData = new StateMetaData();
+			stateMetaData.setId("IN-KL");
+			stateMetaData.setState("Kerala");
+			states.add(stateMetaData);	
+			
+			stateMetaData.setId("IN-JK");
+			stateMetaData.setState("Jammu and Kashmir");
+			states.add(stateMetaData);
+			
+			stateMetaData.setId("IN-TN");
+			stateMetaData.setState("Tamil Nadu");
+			states.add(stateMetaData);
+			diseaseSplitResp.setStates(states);
+		}		
+		return diseaseSplitResp;
 	}
 
 }
