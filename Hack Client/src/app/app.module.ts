@@ -8,10 +8,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MapComponent } from './map/map.component';
+import {PredictionComponent} from './prediction/prediction.component'
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { StateDetailsService } from './state-details.service';
 import { MapDetailsService } from './map.service';
+
 import { HttpModule } from '@angular/http'
+import { PredictionService } from './prediction.service';
+import { routing, appRoutingProviders } from './app.router';
 
 @NgModule({
   declarations: [
@@ -19,16 +23,18 @@ import { HttpModule } from '@angular/http'
     HeaderComponent,
     SidebarComponent,
     MapComponent,
-    TooltipComponent
+    TooltipComponent,
+    PredictionComponent
   ],
   imports: [
     BrowserModule,
     ChartModule,
     BrowserAnimationsModule,
-    HttpModule
+    HttpModule,
+    routing
     
   ],
-  providers: [StateDetailsService,MapDetailsService],
+  providers: [StateDetailsService,MapDetailsService,PredictionService,appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
